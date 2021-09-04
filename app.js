@@ -6,7 +6,7 @@ var cloudinaryStorage = require('multer-storage-cloudinary')
 
 /* Config html directory to serve static HTML files.
    Pages are accessed with /static URL. */
-app.use('/static', express.static('html'))
+app.use('/', express.static('html'))
 
 /* Config cloudinary for the multer-storage-cloudinary object.
    Notice that the cloudinary object automatically configures itself
@@ -21,7 +21,7 @@ var storage = cloudinaryStorage({
    storage engine */
 var parser = multer({ storage: storage });
 
-app.get('/', function (req, res) {
+app.get('/testing', function (req, res) {
   res.send('Hello World for Testing!')
 })
 
